@@ -15,14 +15,14 @@ const FETCH_LIMIT = 200;
  * higher than its selling price. The Phoenix API returns these as string
  * amounts (e.g. "15.00"), so compare numerically.
  */
-function variantHasDiscount(v) {
+export function variantHasDiscount(v) {
   return (
     v.compare_at_price != null && Number(v.compare_at_price) > Number(v.price)
   );
 }
 
 /** Map the raw Shopify-style product into a compact shape for the LLM. */
-function shapeProduct(p) {
+export function shapeProduct(p) {
   // forEach (not map) so each variant can be inspected/logged while debugging.
   const variants = [];
   (p.variants ?? []).forEach((v) => {

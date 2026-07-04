@@ -6,7 +6,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "viz": "node src/visualize.js"
+    "viz": "node src/visualize.js",
+    "test": "node --test"
   },
   "dependencies": {
     "@langchain/core": "^0.3.0",
