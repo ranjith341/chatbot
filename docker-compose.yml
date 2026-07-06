@@ -1,0 +1,10 @@
+services:
+  bot:
+    build: .
+    image: langgraph-bot:latest
+    # Interactive chat loop needs a TTY + stdin.
+    stdin_open: true
+    tty: true
+    env_file:
+      - .env
+    restart: "no"
