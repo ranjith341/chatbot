@@ -8,6 +8,7 @@ import { log } from "./logger.js";
  * Minimal ReAct loop: the model decides whether to call a tool, the tool runs,
  * the result is fed back, and it loops until the model gives a final answer.
  */
+
 async function callModel(state) {
   const response = await model.invoke(state.messages);
   if (response.tool_calls?.length) {
